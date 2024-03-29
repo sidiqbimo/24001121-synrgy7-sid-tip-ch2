@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="actionButton">
+        <item name="android:backgroundTint">#3559E0</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="optionButton">
+        <item name="android:backgroundTint">#4CB9E7</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

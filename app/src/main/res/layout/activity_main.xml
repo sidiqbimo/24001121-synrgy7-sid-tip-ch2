@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/clue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please input total amount"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/costTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/costTotal"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Input here"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@id/clue"
+        app:layout_constraintEnd_toEndOf="@id/clue"
+       app:layout_constraintTop_toBottomOf="@id/clue"
+        app:layout_constraintBottom_toTopOf="@id/cluePerformance"/>
+
+    <TextView
+        android:id="@+id/cluePerformance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How's their performance?"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/costTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <RadioGroup
+        android:id="@+id/opsiTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/lowTipPick"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/cluePerformance"
+        app:layout_constraintEnd_toEndOf="@id/cluePerformance"
+        app:layout_constraintTop_toBottomOf="@id/cluePerformance">
+
+        <RadioButton
+            android:id="@+id/lowTipPick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Just fine (15% tip)" />
+
+        <RadioButton
+            android:id="@+id/medTipPick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nice (18% tip)" />
+
+        <RadioButton
+            android:id="@+id/highTipPick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loved it! (20% tip)" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/roundUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="false"
+
+        android:text="Round up tip?"
+        app:layout_constraintEnd_toEndOf="@id/opsiTip"
+        app:layout_constraintStart_toStartOf="@id/opsiTip"
+        app:layout_constraintTop_toBottomOf="@id/opsiTip" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caluclate Tip"
+        android:layout_marginTop="30dp"
+        style="@style/actionButton"
+        app:layout_constraintTop_toBottomOf="@id/roundUp"
+        app:layout_constraintStart_toStartOf="@id/roundUp"
+        app:layout_constraintEnd_toEndOf="@id/roundUp"/>
+
+    <TextView
+        android:id="@+id/tipCalced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="The tip will be Rp. 5.000 totalling"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/totalCostBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rp 210.000"
+        android:textColor="#4CB9E7"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tipCalced" />
+
+    <TextView
+        android:id="@+id/languageChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Change language"
+        android:textColor="#B5C0D0"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
